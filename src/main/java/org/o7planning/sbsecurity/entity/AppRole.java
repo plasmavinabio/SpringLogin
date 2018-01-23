@@ -8,17 +8,17 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
  
 @Entity
-@Table(name = "App_Role", //
+@Table(name = "role", //
         uniqueConstraints = { //
-                @UniqueConstraint(name = "APP_ROLE_UK", columnNames = "Role_Name") })
+                @UniqueConstraint(name = "ROLE_UK", columnNames = "code") })
 public class AppRole {
      
     @Id
     @GeneratedValue
-    @Column(name = "Role_Id", nullable = false)
+    @Column(name = "role_id", nullable = false)
     private Long roleId;
  
-    @Column(name = "Role_Name", length = 30, nullable = false)
+    @Column(name = "code", length = 30, nullable = false)
     private String roleName;
  
     public Long getRoleId() {
